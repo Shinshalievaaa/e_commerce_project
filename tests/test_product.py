@@ -18,7 +18,7 @@ def test_init(product_pasta):
 
 def test_new_product(product_json, product_list):
     """тестирование создания нового продукта через метод класса"""
-    new_product = Product.new_product(product_list, **product_json)
+    new_product = Product.new_product(product_json)
     assert new_product.name == product_json['name']
     assert new_product.description == product_json['description']
     assert new_product.price == product_json['price']
@@ -27,7 +27,7 @@ def test_new_product(product_json, product_list):
 
 def test_new_double_product(product_json, product_phones_list):
     """тестирование создания существующего продукта"""
-    new_product = Product.new_product(product_phones_list, **product_json)
+    new_product = Product.new_product(product_json, product_phones_list)
     assert new_product.name == product_json['name']
     assert new_product.description == product_json['description']
     assert new_product.price == product_json['price']

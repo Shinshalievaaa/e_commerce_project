@@ -1,5 +1,6 @@
-class Product():
+class Product:
     """Класс товар для электронного магазина"""
+
     name: str
     description: str
     __price: float
@@ -11,21 +12,25 @@ class Product():
         self.__price = price
         self.quantity = quantity
 
-
     @classmethod
-    def new_product(cls, products_list, **data):
-        for product in products_list:
-            if product.name == data['name']:
-                product.price = max(product.price, data['price'])
-                product.quantity = product.quantity + data['quantity']
-                return product
-        return cls(data['name'], data['description'], data['price'], data['quantity'])
-
+    def new_product(cls, data, products_list=None):
+        if products_list is None:
+            return cls(
+                data["name"], data["description"], data["price"], data["quantity"]
+            )
+        else:
+            for product in products_list:
+                if product.name == data["name"]:
+                    product.price = max(product.price, data["price"])
+                    product.quantity = product.quantity + data["quantity"]
+                    return product
+            return cls(
+                data["name"], data["description"], data["price"], data["quantity"]
+            )
 
     @property
     def price(self):
         return self.__price
-
 
     @price.setter
     def price(self, price):
