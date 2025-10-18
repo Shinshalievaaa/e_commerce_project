@@ -23,7 +23,7 @@ class Category:
         quantity = 0
         for product in self.__products:
             quantity += product.quantity
-        return f'{self.name}, количество продуктов: {quantity} шт.'
+        return f"{self.name}, количество продуктов: {quantity} шт."
 
     def add_product(self, product):
         if isinstance(product, Product):
