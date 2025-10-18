@@ -32,7 +32,7 @@ def product_json():
 def products_str(product_list):
     products_str = ""
     for product in product_list:
-        products_str += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+        products_str += f'{product}\n'
     return products_str
 
 

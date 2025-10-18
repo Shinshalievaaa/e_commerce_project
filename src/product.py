@@ -12,6 +12,14 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self):
+        """ строковое отображение """
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        """ сложить полную стоимость двух товаров """
+        return self.quantity * self.__price + other.quantity * other.__price
+
     @classmethod
     def new_product(cls, data, products_list=None):
         if products_list is None:

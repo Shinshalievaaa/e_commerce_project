@@ -23,3 +23,4 @@ def test_init(category_type, products_str):
     assert category_type.product_count == 5
     category_type.add_product(Category('test ','test category',[]))
     assert category_type.product_count == 5
+    assert str(category_type) == 'grocery, количество продуктов: 3730 шт.'

@@ -19,6 +19,13 @@ class Category:
             Category.product_count += 1
         Category.number_of_categories += 1
 
+    def __str__(self):
+        """ строковое отображение """
+        quantity = 0
+        for product in self.__products:
+            quantity += product.quantity
+        return f"{self.name}, количество продуктов: {quantity} шт."
+
     def add_product(self, product):
         if isinstance(product, Product):
             self.__products.append(product)
@@ -28,5 +35,5 @@ class Category:
     def products(self):
         products_str = ""
         for product in self.__products:
-            products_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
+            products_str += f"{product}\n"
         return products_str
