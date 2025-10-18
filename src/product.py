@@ -12,6 +12,12 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self):
+        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт.'
+
+    def __add__(self, other):
+        pass
+
     @classmethod
     def new_product(cls, data, products_list=None):
         if products_list is None:
@@ -38,3 +44,5 @@ class Product:
             print("Цена не должна быть нулевая или отрицательная")
         else:
             self.__price = price
+
+
