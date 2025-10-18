@@ -7,6 +7,9 @@ from src.product import Product
 def product_pasta():
     return Product('Italian pasta', 'durum wheat pasta', 230, 1230)
 
+@pytest.fixture
+def product_cheese():
+    return Product('cheese', 'mozzarella', 1000, 320)
 
 def test_init(product_pasta):
     """тестирование создания класса продукт"""
@@ -40,3 +43,8 @@ def test_price(product_pasta):
     assert product_pasta.price == 230
     product_pasta.price = 250
     assert product_pasta.price == 250
+
+
+def test_add_product(product_pasta, product_cheese):
+    num = product_pasta + product_cheese
+    assert num == 356500
