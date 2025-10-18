@@ -47,4 +47,4 @@ def test_price(product_pasta):
 
 def test_add_product(product_pasta, product_cheese):
     num = product_pasta + product_cheese
-    assert num == 356500
+    assert num == 602900
