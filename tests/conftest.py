@@ -1,6 +1,8 @@
 import pytest
 
 from src.product import Product
+from src.smartphone import Smartphone
+from src.lawn_grass import LawnGrass
 
 @pytest.fixture
 def product_list():
@@ -39,3 +41,15 @@ def products_str(product_list):
 @pytest.fixture
 def product_value():
     return [Product('Rice', 'brown rice', 650, 150)]
+
+
+@pytest.fixture
+def product_smartphone():
+    return [Smartphone('Samsung', 'Samsung A33', 100000, 30,
+                    'Max. frequency, 2750 MHz; CPU cores, 8 ', 'A33', 8, 'black')]
+
+
+@pytest.fixture
+def product_lawn_grass():
+    return [LawnGrass('LawnGrass from Chine', 'the lawn grass is thick', 650, 150,
+        'Chine', '1 month', 'green')]
