@@ -20,7 +20,7 @@ class Category:
         Category.number_of_categories += 1
 
     def __str__(self):
-        """ строковое отображение """
+        """строковое отображение"""
         quantity = 0
         for product in self.__products:
             quantity += product.quantity
