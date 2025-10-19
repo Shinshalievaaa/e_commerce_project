@@ -24,3 +24,14 @@ def test_init(category_type, products_str):
     category_type.add_product(Category('test ','test category',[]))
     assert category_type.product_count == 5
     assert str(category_type) == 'grocery, количество продуктов: 3730 шт.'
+
+
+def test_add_product(category_type, product_value, product_smartphone1, product_lawn_grass1):
+    """ тестирование добавления продуктов в список категории"""
+    category_type.add_product(product_value)
+    category_type.add_product(product_smartphone1)
+    category_type.add_product(product_lawn_grass1)
+    category_type.add_product('onion')
+    category_type.add_product('onion2')
+    category_type.add_product('onion3')
+    assert category_type.product_count == 11
