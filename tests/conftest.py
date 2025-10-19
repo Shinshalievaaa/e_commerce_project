@@ -45,7 +45,7 @@ def products_str(product_list):
 
 @pytest.fixture
 def product_value():
-    return [Product('Rice', 'brown rice', 650, 150)]
+    return Product('Rice', 'brown rice', 650, 150)
 
 
 @pytest.fixture
