@@ -49,24 +49,24 @@ def product_value():
 
 
 @pytest.fixture
-def product_smartphone1():
+def product_smartphone_1():
     return Smartphone('Samsung', 'Samsung A33', 100000, 30,
                     'Max. frequency, 2750 MHz; CPU cores, 8 ', 'A33', 8, 'black')
 
 
 @pytest.fixture
-def product_smartphone2():
+def product_smartphone_2():
     return Smartphone('Samsung', 'Samsung S33', 180000, 20,
                     'Max. frequency, 2750 MHz; CPU cores, 8 ', 'S33', 8, 'white')
 
 
 @pytest.fixture
-def product_lawn_grass1():
+def product_lawn_grass_1():
     return LawnGrass('LawnGrass from Chine', 'the lawn grass is thick', 5000, 100,
         'Chine', '1 month', 'green')
 
 
 @pytest.fixture
-def product_lawn_grass2():
+def product_lawn_grass_2():
     return LawnGrass('LawnGrass from USA', 'the lawn grass is thick', 3000, 200,
         'USA', '2 month', 'green')
