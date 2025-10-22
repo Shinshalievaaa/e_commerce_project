@@ -21,6 +21,24 @@ def test_init(category_type, products_str):
     assert category_type.product_count == 4
     category_type.add_product(Product('Rice', 'brown rice', 650, 150))
     assert category_type.product_count == 5
-    category_type.add_product(Category('test ','test category',[]))
-    assert category_type.product_count == 5
     assert str(category_type) == 'grocery, количество продуктов: 3730 шт.'
+
+
+def test_add_product(category_type, product_value, product_smartphone_1, product_lawn_grass_1):
+    """ тестирование добавления продуктов в список категории"""
+    category_type.add_product(product_value)
+    category_type.add_product(product_smartphone_1)
+    category_type.add_product(product_lawn_grass_1)
+    assert category_type.product_count == 12
+
+
+def test_add_product_error(category_type):
+    """ тестирование добавления не класса Продукт """
+    with pytest.raises(ValueError):
+        category_type.add_product('onion3')
+
+
+def test_add_product_error2(category_type):
+    """ тестирование добавления не класса Продукт """
+    with pytest.raises(ValueError):
+        category_type.add_product(Category('test ','test category',[]))

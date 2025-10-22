@@ -20,16 +20,18 @@ class Category:
         Category.number_of_categories += 1
 
     def __str__(self):
-        """ строковое отображение """
+        """строковое отображение"""
         quantity = 0
         for product in self.__products:
             quantity += product.quantity
         return f"{self.name}, количество продуктов: {quantity} шт."
 
     def add_product(self, product):
-        if isinstance(product, Product):
+        if isinstance(product, Product) and issubclass(product.__class__, Product):
             self.__products.append(product)
             Category.product_count += 1
+        else:
+            raise ValueError
 
     @property
     def products(self):

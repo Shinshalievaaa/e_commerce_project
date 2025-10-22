@@ -1,14 +1,21 @@
 import pytest
 
 from src.product import Product
+from src.smartphone import Smartphone
+from src.lawn_grass import LawnGrass
 
 @pytest.fixture
 def product_list():
+    products_list = []
     product_pasta = Product('Italian pasta', 'durum wheat pasta', 230, 1230)
     product_buckwheat = Product('Makfa buckwheat', 'buckwheat', 150, 900)
     product_flour = Product('Makfa flour', 'first grade flour', 330, 600)
     product_salt = Product('Iletsk salt', 'salt', 50, 850)
-    return [product_pasta, product_buckwheat, product_flour, product_salt]
+    products_list.append(product_pasta)
+    products_list.append(product_buckwheat)
+    products_list.append(product_flour)
+    products_list.append(product_salt)
+    return products_list
 
 
 @pytest.fixture
@@ -38,4 +45,28 @@ def products_str(product_list):
 
 @pytest.fixture
 def product_value():
-    return [Product('Rice', 'brown rice', 650, 150)]
+    return Product('Rice', 'brown rice', 650, 150)
+
+
+@pytest.fixture
+def product_smartphone_1():
+    return Smartphone('Samsung', 'Samsung A33', 100000, 30,
+                    'Max. frequency, 2750 MHz; CPU cores, 8 ', 'A33', 8, 'black')
+
+
+@pytest.fixture
+def product_smartphone_2():
+    return Smartphone('Samsung', 'Samsung S33', 180000, 20,
+                    'Max. frequency, 2750 MHz; CPU cores, 8 ', 'S33', 8, 'white')
+
+
+@pytest.fixture
+def product_lawn_grass_1():
+    return LawnGrass('LawnGrass from Chine', 'the lawn grass is thick', 5000, 100,
+        'Chine', '1 month', 'green')
+
+
+@pytest.fixture
+def product_lawn_grass_2():
+    return LawnGrass('LawnGrass from USA', 'the lawn grass is thick', 3000, 200,
+        'USA', '2 month', 'green')
