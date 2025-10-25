@@ -17,11 +17,14 @@ class Product(BaseProduct, PrintMixin):
     quantity: int
 
     def __init__(self, name, description, price, quantity):
-        self.name = name
-        self.description = description
-        self.__price = price
-        self.quantity = quantity
-        super().__init__(name, description, price, quantity)
+        if quantity > 0:
+            self.name = name
+            self.description = description
+            self.__price = price
+            self.quantity = quantity
+            super().__init__(name, description, price, quantity)
+        else:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
 
     def __str__(self):
         """строковое отображение"""
