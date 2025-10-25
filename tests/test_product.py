@@ -53,6 +53,7 @@ def test_add_product(product_pasta, product_cheese):
 
 def test_init_quantity_zero(product_pasta):
     """ тестирование создания продукта с нулевым количеством """
-    with pytest.raises(ValueError) as e:
+    with pytest.raises(ValueError, match='Товар с нулевым количеством не может быть добавлен'):
         Product('Italian pasta', 'durum wheat pasta', 230, 0)
-        assert e.value == 'Цена не должна быть нулевая или отрицательная'
+
+        # assert e.value == 'Цена не должна быть нулевая или отрицательная'
