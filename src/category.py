@@ -7,7 +7,7 @@ class Category:
     name: str
     description: str
     __products: list
-    number_of_categories = 0
+    category_count = 0
     product_count = 0
 
     def __init__(self, name, description, products=None):
@@ -17,7 +17,7 @@ class Category:
         for product in products:
             self.__products.append(product)
             Category.product_count += 1
-        Category.number_of_categories += 1
+        Category.category_count += 1
 
     def __str__(self):
         """строковое отображение"""

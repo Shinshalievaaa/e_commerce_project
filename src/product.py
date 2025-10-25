@@ -1,4 +1,14 @@
-class Product:
+from abc import ABC, abstractmethod
+from src.print_mixin import PrintMixin
+
+
+class BaseProduct(ABC):
+    """ Абстрактный класс для классов типа продукт """
+    @abstractmethod
+    def __add__(self, other):
+        pass
+
+class Product(BaseProduct, PrintMixin):
     """Класс товар для электронного магазина"""
 
     name: str
@@ -11,6 +21,7 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__(name, description, price, quantity)
 
     def __str__(self):
         """строковое отображение"""

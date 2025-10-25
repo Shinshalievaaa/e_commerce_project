@@ -1,7 +1,8 @@
 from src.product import Product
+from src.print_mixin import PrintMixin
 
 
-class LawnGrass(Product):
+class LawnGrass(Product, PrintMixin):
     """Подкласс Трава газонная"""
 
     __price: float

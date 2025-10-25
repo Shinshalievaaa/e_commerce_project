@@ -1,7 +1,8 @@
 from src.product import Product
+from src.print_mixin import PrintMixin
 
 
-class Smartphone(Product):
+class Smartphone(Product, PrintMixin):
     """Подкласс Смартфон"""
 
     __price: float
