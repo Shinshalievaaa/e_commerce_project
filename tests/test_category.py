@@ -42,3 +42,12 @@ def test_add_product_error2(category_type):
     """ тестирование добавления не класса Продукт """
     with pytest.raises(ValueError):
         category_type.add_product(Category('test ','test category',[]))
+
+
+def test_middle_price(category_type):
+    assert category_type.middle_price() ==  190.0
+
+
+def test_middle_price_with_empty_list_products():
+    category_empty_list_products = Category('test ', 'test category', [])
+    assert category_empty_list_products.middle_price() == 0
